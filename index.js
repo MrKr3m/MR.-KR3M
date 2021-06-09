@@ -532,7 +532,7 @@ Prefix : 「 MULTI-PREFIX 」
             fs.unlinkSync(media)
             if (err) return fakegroup(`Err: ${err}`)
             buffer453 = fs.readFileSync(ran)
-            hexa.sendMessage(from, buffer453, video, { mimetype: 'video/mp4', quoted: mek })
+            bot.sendMessage(from, buffer453, video, { mimetype: 'video/mp4', quoted: mek })
             fs.unlinkSync(ran)
             })
             break
@@ -619,14 +619,14 @@ Prefix : 「 MULTI-PREFIX 」
             ffmpeg(media)
             .on('error', (e) => {
             console.log(e)
-            hexa.sendMessage(from, 'Terjadi kesalahan', 'conversation', { quoted: mek })
+            bot.sendMessage(from, 'Terjadi kesalahan', 'conversation', { quoted: mek })
             fs.unlinkSync(media)
             })
             .on('end', () => {
             _out = getRandom('.webp')
             spawn('webpmux', ['-set','exif','./stik/data.exif', out, '-o', _out])
             .on('exit', () => {
-            hexa.sendMessage(from, fs.readFileSync(_out),'stickerMessage', { quoted: mek })
+            bot.sendMessage(from, fs.readFileSync(_out),'stickerMessage', { quoted: mek })
             fs.unlinkSync(out)
             fs.unlinkSync(_out)
             fs.unlinkSync(media)
@@ -648,9 +648,10 @@ Prefix : 「 MULTI-PREFIX 」
             if (isQuotedImage) {
             const swsw = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
             cihcih = await hexa.downloadMediaMessage(swsw)
-            hexa.sendMessage('status@broadcast', cihcih, image, { caption: `${q}` })
+            bot.sendMessage('status@broadcast', cihcih, image, { caption: `${q}` })
             bur = `Sukses Upload Story Image dengan Caption: ${q}`
-            hexa.sendMessage(from, bur, text, { quoted: mek })
+            hexa
+.sendMessage(from, bur, text, { quoted: mek })
             } else {
             fakestatus('Reply gambarnya!')
             }
@@ -659,9 +660,9 @@ Prefix : 「 MULTI-PREFIX 」
             if (isQuotedVideo) {
             const swsw = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
             cihcih = await hexa.downloadMediaMessage(swsw)
-            hexa.sendMessage('status@broadcast', cihcih, video, { caption: `${q}` }) 
+            bot.sendMessage('status@broadcast', cihcih, video, { caption: `${q}` }) 
             bur = `Sukses Upload Story Video dengan Caption: ${q}`
-            hexa.sendMessage(from, bur, text, { quoted: mek })
+            bot.sendMessage(from, bur, text, { quoted: mek })
             } else {
             fakestatus('reply videonya!')
             }
@@ -787,7 +788,7 @@ Prefix : 「 MULTI-PREFIX 」
                 })
                 .on('end', function () {
                 console.log('Finish')
-                hexa.sendMessage(from, fs.readFileSync(ran), sticker, {quoted: mek})
+                bot.sendMessage(from, fs.readFileSync(ran), sticker, {quoted: mek})
                  fs.unlinkSync(media)
                 fs.unlinkSync(ran)
                 })
