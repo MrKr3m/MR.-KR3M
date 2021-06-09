@@ -100,3 +100,6 @@ module.exports = bot = async (bot, mek) => {
                const conts = mek.key.fromMe ? bot.user.jid : bot.contacts[sender] || { notify: jid.replace(/@.+/, '') } 
                const pushname = mek.key.fromMe ? bot.user.name : 
                conts.notify || conts.vname || conts.name || '-'
+
+               //MESS		
+                    mess = {			wait: 'Otewe',			success: 'Berhasil!',			wrongFormat: 'Format salah, coba liat lagi di menu',			error: {				stick: 'bukan sticker itu:v',				Iv: 'Linknya error:v'			},			only: {				group: 'Khusus grup ngab',			}		}
