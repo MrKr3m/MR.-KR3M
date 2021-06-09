@@ -9,7 +9,7 @@
 >
 </div>
 <p align="center">
-  <a href="https://github.com/MrKr3."><img title="Author" src="https://img.shields.io/badge/Author-MR. KR3M-red.svg?style=for-the-badge&logo=github" /></a>
+  <a href="https://github.com/MrKr3m"><img title="Author" src="https://img.shields.io/badge/Author-MR. KR3M-red.svg?style=for-the-badge&logo=github" /></a>
   <h4 align="center">
   <a href="https://wa.me/6282293271747">MR. KR3M >//< </a>
 </h4>
