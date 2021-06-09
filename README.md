@@ -122,7 +122,6 @@
 
   # MAKASIH LORT
 * [`Baileys`](https://github.com/adiwajshing/Baileys)
-* [`MhankBarBar`](https://github.com/MhankBarBar)
 * [`MRHRTZ`](https://github.com/MRHRTZ)
 * [`GUSTI ID`](https://github.com/Gusti-ID)
 
