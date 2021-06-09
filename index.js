@@ -81,8 +81,22 @@ module.exports = bot = async (bot, mek) => {
                const args = body.trim().split(/ +/).slice(1)
        	       const isCmd = body.startsWith(prefix)
 	       const q = args.join(' ')		
-               const botNumber = hexa.user.jid		
-               const botNumberss = hexa.user.jid + '@c.us'		
+               const botNumber = bot.user.jid		
+               const botNumberss = bot.user.jid + '@c.us'		
                const isGroup = from.endsWith('@g.us')		
                let sender = isGroup ? mek.participant : mek.key.remoteJid		
-// const isSelfNumber = config.NomorSELF		// const isOwner = sender.id === isSelfNumber		const totalchat = await hexa.chats.all()		const groupMetadata = isGroup ? await hexa.groupMetadata(from) : ''		const groupName = isGroup ? groupMetadata.subject : ''		const groupId = isGroup ? groupMetadata.jid : ''		const groupMembers = isGroup ? groupMetadata.participants : ''		const groupDesc = isGroup ? groupMetadata.desc : ''		const groupOwner = isGroup ? groupMetadata.owner : ''		const groupAdmins = isGroup ? getGroupAdmins(groupMembers) : ''		const isBotGroupAdmins = groupAdmins.includes(botNumber) || false		const isGroupAdmins = groupAdmins.includes(sender) || false const conts = mek.key.fromMe ? hexa.user.jid : hexa.contacts[sender] || { notify: jid.replace(/@.+/, '') } const pushname = mek.key.fromMe ? hexa.user.name : conts.notify || conts.vname || conts.name || '-'
+               // const isSelfNumber = config.NomorSELF		
+               // const isOwner = sender.id === isSelfNumber		
+               const totalchat = await bot.chats.all()		
+               const groupMetadata = isGroup ? await hexa.groupMetadata(from) : ''		
+               const groupName = isGroup ? groupMetadata.subject : ''		
+               const groupId = isGroup ? groupMetadata.jid : ''		
+               const groupMembers = isGroup ? groupMetadata.participants : ''		
+               const groupDesc = isGroup ? groupMetadata.desc : ''	
+               const groupOwner = isGroup ? groupMetadata.owner : ''		
+               const groupAdmins = isGroup ? getGroupAdmins(groupMembers) : ''		
+               const isBotGroupAdmins = groupAdmins.includes(botNumber) || false		
+               const isGroupAdmins = groupAdmins.includes(sender) || false 
+               const conts = mek.key.fromMe ? bot.user.jid : bot.contacts[sender] || { notify: jid.replace(/@.+/, '') } 
+               const pushname = mek.key.fromMe ? bot.user.name : 
+               conts.notify || conts.vname || conts.name || '-'
