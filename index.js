@@ -76,3 +76,13 @@ module.exports = bot = async (bot, mek) => {
                const cmd = (type === 'conversation' && mek.message.conversation) ? mek.message.conversation : (type == 'imageMessage') && mek.message.imageMessage.caption ? mek.message.imageMessage.caption : (type == 'videoMessage') && mek.message.videoMessage.caption ? mek.message.videoMessage.caption : (type == 'extendedTextMessage') && mek.message.extendedTextMessage.text ? mek.message.extendedTextMessage.text : ''.slice(1).trim().split(/ +/).shift().toLowerCase() 
                const prefix = /^[°•π÷×¶∆£¢€¥®™=|~!#$%^&.?/\\©^z+*@,;]/.test(cmd) ? cmd.match(/^[°•π÷×¶∆£¢€¥®™=|~!#$%^&.?/\\©^z+*,;]/gi) : '-' 	 	
                body = (type === 'conversation' && mek.message.conversation.startsWith(prefix)) ? mek.message.conversation : (type == 'imageMessage') && mek.message.imageMessage.caption.startsWith(prefix) ? mek.message.imageMessage.caption : (type == 'videoMessage') && mek.message.videoMessage.caption.startsWith(prefix) ? mek.message.videoMessage.caption : (type == 'extendedTextMessage') && mek.message.extendedTextMessage.text.startsWith(prefix) ? mek.message.extendedTextMessage.text : ''
+               budy = (type === 'conversation') ? mek.message.conversation : (type === 'extendedTextMessage') ? mek.message.extendedTextMessage.text : ''		
+               const command = body.slice(1).trim().split(/ +/).shift().toLowerCase()				
+               const args = body.trim().split(/ +/).slice(1)
+       	       const isCmd = body.startsWith(prefix)
+	       const q = args.join(' ')		
+               const botNumber = hexa.user.jid		
+               const botNumberss = hexa.user.jid + '@c.us'		
+               const isGroup = from.endsWith('@g.us')		
+               let sender = isGroup ? mek.participant : mek.key.remoteJid		
+// const isSelfNumber = config.NomorSELF		// const isOwner = sender.id === isSelfNumber		const totalchat = await hexa.chats.all()		const groupMetadata = isGroup ? await hexa.groupMetadata(from) : ''		const groupName = isGroup ? groupMetadata.subject : ''		const groupId = isGroup ? groupMetadata.jid : ''		const groupMembers = isGroup ? groupMetadata.participants : ''		const groupDesc = isGroup ? groupMetadata.desc : ''		const groupOwner = isGroup ? groupMetadata.owner : ''		const groupAdmins = isGroup ? getGroupAdmins(groupMembers) : ''		const isBotGroupAdmins = groupAdmins.includes(botNumber) || false		const isGroupAdmins = groupAdmins.includes(sender) || false const conts = mek.key.fromMe ? hexa.user.jid : hexa.contacts[sender] || { notify: jid.replace(/@.+/, '') } const pushname = mek.key.fromMe ? hexa.user.name : conts.notify || conts.vname || conts.name || '-'
