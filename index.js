@@ -1,5 +1,5 @@
-// SC NYA JANGAN DI JUAL NGENTOD
-//MAKASIH DAH PAKE 
+// MAU RECODE? ERROR? MAMPUS!!!
+//JANGAN DI JUAL AWAS LU 
 const  
         {		
                  WAConnection,		
